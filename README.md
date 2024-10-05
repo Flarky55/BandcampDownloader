@@ -1,7 +1,7 @@
 <h1 align="center"><img alt="Icon" src="docs/images/Cloud.png"> Bandcamp Downloader</h1>
 
 <p align="center">
-    <a href="https://github.com/Otiel/BandcampDownloader/releases/latest"><img alt="Download" src="docs/images/DownloadButton.png"></a>
+    <a href="https://github.com/Flarky55/BandcampDownloader/releases/latest"><img alt="Download" src="docs/images/DownloadButton.png"></a>
 </p>
 
 [![build:master status](https://img.shields.io/appveyor/ci/Otiel/BandcampDownloader/master.svg?label=build:master&logo=appveyor)](https://ci.appveyor.com/project/Otiel/bandcampdownloader/branch/master) [![build:develop status](https://img.shields.io/appveyor/ci/Otiel/BandcampDownloader/develop.svg?label=build:develop&logo=appveyor)](https://ci.appveyor.com/project/Otiel/bandcampdownloader/branch/develop) [![Translation status](https://hosted.weblate.org/widgets/bandcampdownloader/-/bandcampdownloader/svg-badge.svg)](https://hosted.weblate.org/engage/bandcampdownloader/)
