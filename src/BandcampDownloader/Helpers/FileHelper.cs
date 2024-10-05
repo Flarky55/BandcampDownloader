@@ -38,6 +38,7 @@ namespace BandcampDownloader
         {
             var webRequest = HttpWebRequest.Create(UrlHelper.GetHttpUrlIfNeeded(url));
             webRequest.Method = protocolMethod;
+            ProxyHelper.SetProxy(webRequest);
             long fileSize;
             try
             {

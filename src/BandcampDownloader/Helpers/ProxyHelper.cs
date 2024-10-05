@@ -11,20 +11,27 @@ namespace BandcampDownloader
         /// <param name="webClient">The WebClient to modify.</param>
         public static void SetProxy(WebClient webClient)
         {
+            if (App.UserSettings.Proxy == ProxyType.System && webClient.Proxy == null) return;
+
+            webClient.Proxy = GetProxy();
+        }
+        public static void SetProxy(WebRequest webRequest)
+        {
+            webRequest.Proxy = GetProxy();
+        }
+
+        private static IWebProxy GetProxy()
+        {
             switch (App.UserSettings.Proxy)
             {
                 case ProxyType.None:
-                    webClient.Proxy = null;
-                    break;
+                    return null;
                 case ProxyType.System:
-                    if (webClient.Proxy != null)
-                    {
-                        webClient.Proxy.Credentials = CredentialCache.DefaultNetworkCredentials;
-                    }
-                    break;
+                    IWebProxy proxy = WebRequest.GetSystemWebProxy();
+                    proxy.Credentials = CredentialCache.DefaultNetworkCredentials;
+                    return proxy;
                 case ProxyType.Manual:
-                    webClient.Proxy = new WebProxy(App.UserSettings.ProxyHttpAddress, App.UserSettings.ProxyHttpPort);
-                    break;
+                    return new WebProxy(App.UserSettings.ProxyHttpAddress, App.UserSettings.ProxyHttpPort);
                 default:
                     throw new NotImplementedException();
             }
