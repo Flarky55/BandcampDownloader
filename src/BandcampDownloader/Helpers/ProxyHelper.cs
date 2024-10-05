@@ -11,8 +11,6 @@ namespace BandcampDownloader
         /// <param name="webClient">The WebClient to modify.</param>
         public static void SetProxy(WebClient webClient)
         {
-            if (App.UserSettings.Proxy == ProxyType.System && webClient.Proxy == null) return;
-
             webClient.Proxy = GetProxy();
         }
         public static void SetProxy(WebRequest webRequest)
