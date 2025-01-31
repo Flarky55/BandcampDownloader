@@ -25,6 +25,7 @@
             <RowDefinition Height="26" />
             <RowDefinition Height="26" />
             <RowDefinition Height="26" />
+            <RowDefinition Height="26" />
         </Grid.RowDefinitions>
         <StackPanel
             Grid.Row="0"
@@ -84,7 +85,7 @@
                 NavigateUri="{Binding Source={x:Static local:Constants.UrlWebsite}}"
                 RequestNavigate="Hyperlink_RequestNavigate"
                 ToolTip="{Binding Source={x:Static local:Constants.UrlWebsite}}">
-                <TextBlock x:Name="textBlockWebsite" Text="github.com/Otiel/BandcampDownloader" />
+                <TextBlock x:Name="textBlockWebsite" Text="github.com/Flarky55/BandcampDownloader" />
             </Hyperlink>
         </TextBlock>
         <Label
@@ -101,7 +102,24 @@
                 NavigateUri="{Binding Source={x:Static local:Constants.UrlIssues}}"
                 RequestNavigate="Hyperlink_RequestNavigate"
                 ToolTip="{Binding Source={x:Static local:Constants.UrlIssues}}">
-                <TextBlock x:Name="textBlockIssuesWebsite" Text="github.com/Otiel/BandcampDownloader/issues" />
+                <TextBlock x:Name="textBlockIssuesWebsite" Text="github.com/Flarky55/BandcampDownloader/issues" />
+            </Hyperlink>
+        </TextBlock>
+        <Label
+            x:Name="labelWebsiteOrigin"
+            Grid.Row="5"
+            Grid.Column="0"
+            Content="{lex:Loc}" />
+        <TextBlock
+            Grid.Row="5"
+            Grid.Column="1"
+            VerticalAlignment="Center">
+            <Hyperlink
+                x:Name="hyperlinkWebsiteOrigin"
+                NavigateUri="{Binding Source={x:Static local:Constants.UrlWebsite}}"
+                RequestNavigate="Hyperlink_RequestNavigate"
+                ToolTip="{Binding Source={x:Static local:Constants.UrlWebsite}}">
+                <TextBlock x:Name="textBlockWebsiteOrigin" Text="github.com/Otiel/BandcampDownloader" />
             </Hyperlink>
         </TextBlock>
     </Grid>

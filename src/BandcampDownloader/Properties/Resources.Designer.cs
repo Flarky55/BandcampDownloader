@@ -884,6 +884,15 @@ namespace BandcampDownloader.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Website (Original).
+        /// </summary>
+        internal static string labelWebsiteOrigin {
+            get {
+                return ResourceManager.GetString("labelWebsiteOrigin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Album release _year.
         /// </summary>
         internal static string labelYear {

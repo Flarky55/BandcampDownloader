@@ -548,4 +548,7 @@ Paste artist pages: http://[artist].bandcamp.com and check "☑ Download artist 
   <data name="labelPassword" xml:space="preserve">
     <value>Password</value>
   </data>
+  <data name="labelWebsiteOrigin" xml:space="preserve">
+    <value>Website (Original)</value>
+  </data>
 </root>

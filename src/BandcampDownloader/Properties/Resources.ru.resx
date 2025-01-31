@@ -539,4 +539,7 @@ http://[artist].bandcamp.com/track/[track]
   <data name="labelPassword" xml:space="preserve">
     <value>Пароль</value>
   </data>
+  <data name="labelWebsiteOrigin" xml:space="preserve">
+    <value>Веб-сайт (Оригинал)</value>
+  </data>
 </root>
