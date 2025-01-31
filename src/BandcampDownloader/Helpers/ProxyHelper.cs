@@ -20,16 +20,19 @@ namespace BandcampDownloader
 
         private static IWebProxy GetProxy()
         {
+            IWebProxy proxy;
             switch (App.UserSettings.Proxy)
             {
                 case ProxyType.None:
                     return null;
                 case ProxyType.System:
-                    IWebProxy proxy = WebRequest.GetSystemWebProxy();
+                    proxy = WebRequest.GetSystemWebProxy();
                     proxy.Credentials = CredentialCache.DefaultNetworkCredentials;
                     return proxy;
                 case ProxyType.Manual:
-                    return new WebProxy(App.UserSettings.ProxyHttpAddress, App.UserSettings.ProxyHttpPort);
+                    proxy = new WebProxy(App.UserSettings.ProxyHttpAddress, App.UserSettings.ProxyHttpPort);
+                    proxy.Credentials = new NetworkCredential(App.UserSettings.ProxyHttpLogin, App.UserSettings.ProxyHttpPassword);
+                    return proxy;
                 default:
                     throw new NotImplementedException();
             }

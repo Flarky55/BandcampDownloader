@@ -184,6 +184,12 @@ namespace BandcampDownloader
         [Option(DefaultValue = "")]
         int ProxyHttpPort { get; set; }
 
+        [Option(DefaultValue = "")]
+        string ProxyHttpLogin { get; set; }
+
+        [Option(DefaultValue = "")]
+        string ProxyHttpPassword { get; set; }
+
         [Option(DefaultValue = true)]
         bool RetrieveFilesSize { get; set; }
 

@@ -39,6 +39,7 @@
                 <RowDefinition Height="26" />
                 <RowDefinition Height="26" />
                 <RowDefinition Height="26" />
+                <RowDefinition Height="26" />
             </Grid.RowDefinitions>
             <Label
                 x:Name="labelProxy"
@@ -113,6 +114,48 @@
                     TabIndex="4"
                     Text="{Binding ProxyHttpPort, UpdateSourceTrigger=Explicit}"
                     TextChanged="TextBox_TextChanged" />
+            </Grid>
+            <Grid
+                x:Name="gridManualCredentials"
+                Grid.Row="5"
+                Margin="34,0,0,0"
+                HorizontalAlignment="Left">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Label
+                    x:Name="labelLogin"
+                    Grid.Column="0"
+                    HorizontalAlignment="Left"
+                    Content="{lex:Loc}"
+                    Target="{Binding ElementName=textBoxLogin}" />
+                <TextBox
+                    x:Name="textBoxLogin"
+                    Grid.Column="1"
+                    Width="100"
+                    Height="20"
+                    VerticalContentAlignment="Center"
+                    IsEnabled="{Binding ElementName=radioButtonManualProxy, Path=IsChecked}"
+                    TabIndex="5"
+                    Text="{Binding ProxyHttpLogin, UpdateSourceTrigger=Explicit}" />
+                <Label
+                    x:Name="labelPassword"
+                    Grid.Column="2"
+                    Margin="15,0,0,0"
+                    Content="{lex:Loc}"
+                    Target="{Binding ElementName=textBoxPassword}" />
+                <TextBox
+                    x:Name="textBoxPassword"
+                    Grid.Column="3"
+                    Width="100"
+                    Height="20"
+                    VerticalContentAlignment="Center"
+                    IsEnabled="{Binding ElementName=radioButtonManualProxy, Path=IsChecked}"
+                    TabIndex="6"
+                    Text="{Binding ProxyHttpPassword, UpdateSourceTrigger=Explicit}" />
             </Grid>
         </Grid>
     </Grid>
